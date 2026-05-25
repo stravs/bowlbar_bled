@@ -1,0 +1,192 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/global.css';
+
+export function getStaticPaths() {
+  return ['sl', 'en', 'de', 'it'].map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang;
+const site = 'https://bowlbarbled.si';
+const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Ljubljanska%20cesta%204%2C%204260%20Bled%2C%20Slovenia';
+
+const t = {
+  sl: {
+    title: 'Bowl Bar Bled — bowls vsak dan 12:00–20:00',
+    desc: 'Bowl Bar v Bledu. Ljubljanska cesta 4, Trgovski center Bled. Odprto vsak dan 12:00–20:00.',
+    kicker: 'danes 12:00–20:00',
+    h1: 'Bowl Bar Bled',
+    lede: 'Sveže poke bowls. Brez romana. Samo kje, kdaj in kaj lahko ješ.',
+    open: 'Odprto vsak dan',
+    hours: '12:00–20:00',
+    place: 'Lokacija',
+    address: 'Ljubljanska cesta 4',
+    center: 'Trgovski center Bled',
+    prices: 'Cene',
+    priceLine: '8.90–14.90 €',
+    menu: 'Meni',
+    menuLine: '6 bowls + kids',
+    directions: 'Pot do nas',
+    seeMenu: 'Poglej meni',
+    photoTitle: 'Pravi meni. Brez filtra.',
+    photoText: 'Cene in sestavine spodaj so iz slike menija.',
+    bowlsTitle: 'Kaj ješ',
+    infoTitle: 'Info brez skrola',
+    openNow: 'Zdaj',
+    openText: 'Odprto 12:00–20:00, vsak dan.',
+    map: 'Odpri zemljevid',
+    footer: 'Majhen bowl bar v Bledu, Slovenija.'
+  },
+  en: {
+    title: 'Bowl Bar Bled — bowls daily 12:00–20:00',
+    desc: 'Bowl Bar in Bled, Slovenia. Ljubljanska cesta 4, Bled Shopping Center. Open every day 12:00–20:00.',
+    kicker: 'today 12:00–20:00',
+    h1: 'Bowl Bar Bled',
+    lede: 'Fresh poke bowls. No fluff. Just where, when, and what you can eat.',
+    open: 'Open every day',
+    hours: '12:00–20:00',
+    place: 'Location',
+    address: 'Ljubljanska cesta 4',
+    center: 'Bled Shopping Center',
+    prices: 'Prices',
+    priceLine: '€8.90–€14.90',
+    menu: 'Menu',
+    menuLine: '6 bowls + kids',
+    directions: 'Get directions',
+    seeMenu: 'See menu',
+    photoTitle: 'Real menu. No filter.',
+    photoText: 'Prices and ingredients below come from the menu photo.',
+    bowlsTitle: 'Eat this',
+    infoTitle: 'No-scroll info',
+    openNow: 'Now',
+    openText: 'Open 12:00–20:00, every day.',
+    map: 'Open map',
+    footer: 'Small bowl bar in Bled, Slovenia.'
+  },
+  de: {
+    title: 'Bowl Bar Bled — Bowls täglich 12:00–20:00',
+    desc: 'Bowl Bar in Bled, Slowenien. Ljubljanska cesta 4, Einkaufszentrum Bled. Täglich geöffnet 12:00–20:00.',
+    kicker: 'heute 12:00–20:00',
+    h1: 'Bowl Bar Bled',
+    lede: 'Frische Poke Bowls. Kein Blabla. Nur wo, wann und was es gibt.',
+    open: 'Täglich geöffnet',
+    hours: '12:00–20:00',
+    place: 'Ort',
+    address: 'Ljubljanska cesta 4',
+    center: 'Einkaufszentrum Bled',
+    prices: 'Preise',
+    priceLine: '8,90–14,90 €',
+    menu: 'Menü',
+    menuLine: '6 Bowls + Kids',
+    directions: 'Route öffnen',
+    seeMenu: 'Menü ansehen',
+    photoTitle: 'Echte Karte. Kein Filter.',
+    photoText: 'Preise und Zutaten unten kommen vom Menüfoto.',
+    bowlsTitle: 'Das gibt es',
+    infoTitle: 'Info sofort',
+    openNow: 'Jetzt',
+    openText: 'Geöffnet 12:00–20:00, täglich.',
+    map: 'Karte öffnen',
+    footer: 'Kleine Bowl Bar in Bled, Slowenien.'
+  },
+  it: {
+    title: 'Bowl Bar Bled — bowl ogni giorno 12:00–20:00',
+    desc: 'Bowl Bar a Bled, Slovenia. Ljubljanska cesta 4, Centro commerciale Bled. Aperto ogni giorno 12:00–20:00.',
+    kicker: 'oggi 12:00–20:00',
+    h1: 'Bowl Bar Bled',
+    lede: 'Poke bowl fresche. Niente fuffa. Solo dove, quando e cosa mangiare.',
+    open: 'Aperto ogni giorno',
+    hours: '12:00–20:00',
+    place: 'Dove',
+    address: 'Ljubljanska cesta 4',
+    center: 'Centro commerciale Bled',
+    prices: 'Prezzi',
+    priceLine: '8,90–14,90 €',
+    menu: 'Menu',
+    menuLine: '6 bowl + kids',
+    directions: 'Indicazioni',
+    seeMenu: 'Vedi menu',
+    photoTitle: 'Menu vero. Zero filtro.',
+    photoText: 'Prezzi e ingredienti sotto arrivano dalla foto del menu.',
+    bowlsTitle: 'Cosa mangiare',
+    infoTitle: 'Info subito',
+    openNow: 'Ora',
+    openText: 'Aperto 12:00–20:00, ogni giorno.',
+    map: 'Apri mappa',
+    footer: 'Piccolo bowl bar a Bled, Slovenia.'
+  }
+}[lang];
+
+const bowls = [
+  { name: 'Salmon Bowl', price: '€13.90', tags: ['salmon', 'sushi rice'], text: 'Marinated salmon, sushi rice, avocado, cucumber, wakame, black sesame, pickled ginger, spring onion, red cabbage, pomegranate, wasabi mayo.' },
+  { name: 'Tuna Bowl', price: '€14.90', tags: ['tuna', 'spicy mayo'], text: 'Marinated tuna, sushi rice, avocado, mukimame, red cabbage, red onion, radish, sesame seeds, nori, mango, crispy onion, spicy mayo.' },
+  { name: 'Chicken Bowl', price: '€13.90', tags: ['teriyaki', 'poke mayo'], text: 'Teriyaki chicken, sushi rice, mukimame, radish, red cabbage, carrot, pineapple, spring onion, sesame seeds, lime, crispy onion, poke mayo.' },
+  { name: 'Green Bowl', price: '€11.90', tags: ['greens', 'salmon'], text: 'Mixed greens, marinated salmon, avocado, cherry tomato, cucumber, carrot, radish, red cabbage, spring onion, lemon, cream cheese, sesame seeds, poke mayo.' },
+  { name: 'Mixed Bowl', price: '€14.90', tags: ['salmon + tuna', 'wasabi mayo'], text: 'Marinated salmon and tuna, sushi rice, avocado, nori, cucumber, mukimame, wakame, red cabbage, black sesame seeds, crispy onion, pineapple, wasabi mayo.' },
+  { name: 'Vegi Bowl', price: '€13.90', tags: ['tempeh', 'veggie'], text: 'Marinated tempeh, sushi rice, avocado, cucumber, carrot, mukimame, pickled ginger, radish, sesame seeds, poke mayo.' },
+  { name: 'Kids Bowl', price: '€8.90', tags: ['small portion'], text: 'Smaller portion of any bowl.' }
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Restaurant',
+  name: 'Bowl Bar Bled',
+  servesCuisine: ['Poke', 'Bowls'],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Ljubljanska cesta 4',
+    postalCode: '4260',
+    addressLocality: 'Bled',
+    addressCountry: 'SI'
+  },
+  openingHours: 'Mo-Su 12:00-20:00',
+  hasMenu: `${site}/${lang}/#menu`
+};
+---
+<Base title={t.title} description={t.desc} lang={lang} canonical={`${site}/${lang}/`}>
+  <Fragment slot="head">
+    {['sl','en','de','it'].map((l) => <link rel="alternate" hreflang={l} href={`${site}/${l}/`} />)}
+    <link rel="alternate" hreflang="x-default" href={`${site}/en/`} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <header class="topbar">
+    <nav class="shell nav" aria-label="Main">
+      <a class="logo" href={`/${lang}/`} aria-label="Bowl Bar Bled">
+        <img src="/Bowl_bar_logo.png" alt="Bowl Bar" width="2878" height="2610" />
+      </a>
+      <div class="langs" aria-label="Languages">
+        {['sl','en','de','it'].map((l) => <a href={`/${l}/`} aria-current={l === lang ? 'true' : 'false'}>{l.toUpperCase()}</a>)}
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell">
+
+      <div class="fast" aria-label="Important information">
+        <div class="fact"><b>{t.hours}</b><span>{t.open}</span></div>
+        <div class="fact"><b>{t.address}</b><span>{t.center}</span></div>
+      </div>
+
+    </section>
+
+    <section class="section shell menu-board" id="menu">
+      <!-- <h2>{t.bowlsTitle}</h2> -->
+      <div class="bowls">
+        {bowls.map((b) => (
+          <article class="bowl">
+            <div class="bowl-head"><h3>{b.name}</h3><div class="price">{b.price}</div></div>
+            <p>{b.text}</p>
+            <div class="tags">{b.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="shell footer">© {new Date().getFullYear()} Bowl Bar Bled</footer>
+
+</Base>
