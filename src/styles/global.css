@@ -49,8 +49,9 @@ main { flex: 1; }
   gap: 12px;
 }
 .logo {
-  display: block;
-  width: 124px;
+  display: flex;
+  justify-content: flex-end;
+  width: 77px;
   height: 70px;
   overflow: visible;
   position: relative;
