@@ -1,7 +1,7 @@
 @font-face {
   font-family: Bowl;
   src: local("Impact"), local("Arial Black"), local("Helvetica Neue Condensed Black");
-  font-display: block;
+  font-display: swap;
 }
 
 :root {
