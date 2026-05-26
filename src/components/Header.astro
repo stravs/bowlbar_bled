@@ -1,0 +1,23 @@
+---
+import { languages, type Language } from '../data/site';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+---
+<header class="topbar">
+  <nav class="shell nav" aria-label="Main">
+    <div class="logo" aria-label="Bowl Bar Bled">
+      <img src="/Bowl_bar_logo.png" alt="Bowl Bar" width="2878" height="2610" />
+    </div>
+
+    <details class="lang-menu">
+      <summary aria-label="Current language">{lang.toUpperCase()}</summary>
+      <div class="lang-list" aria-label="Languages">
+        {languages.filter((l) => l !== lang).map((l) => <a href={`/${l}/`}>{l.toUpperCase()}</a>)}
+      </div>
+    </details>
+  </nav>
+</header>

@@ -1,0 +1,22 @@
+---
+import { bowls, type Language } from '../data/site';
+
+interface Props {
+  lang: Language;
+}
+
+const menu = bowls[Astro.props.lang];
+---
+<section class="section shell" id="menu" aria-label="Menu">
+  <div class="bowls">
+    {menu.map((b) => (
+      <article class="bowl">
+        <div class="bowl-head">
+          <h2>{b.name}</h2>
+          <div class="price">{b.price}</div>
+        </div>
+        <p>{b.text}</p>
+      </article>
+    ))}
+  </div>
+</section>

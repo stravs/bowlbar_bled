@@ -1,0 +1,18 @@
+---
+import { mapUrl } from '../data/site';
+
+interface Props {
+  hours: string;
+  open: string;
+  address: string;
+  center: string;
+}
+
+const { hours, open, address, center } = Astro.props;
+---
+<section class="hero shell" aria-label="Important information">
+  <div class="fast">
+    <div class="fact"><b>{hours}</b><span>{open}</span></div>
+    <a class="fact" href={mapUrl} target="_blank" rel="noopener noreferrer"><b>{address}</b><span>{center}</span></a>
+  </div>
+</section>
