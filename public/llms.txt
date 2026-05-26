@@ -1,0 +1,37 @@
+# Bowl Bar Bled
+
+> Small bowl bar in Bled, Slovenia. Fresh poke bowls. Open every day 12:00-20:00.
+
+Website: https://bowlbarbled.si
+Location: Ljubljanska cesta 4, 4260 Bled, Slovenia (Trgovski center Bled)
+Google Maps: https://www.google.com/maps/search/?api=1&query=Bowl%20Bar%20Bled%2C%20Ljubljanska%20cesta%204%2C%204260%20Bled%2C%20Slovenia
+Instagram: https://www.instagram.com/bowlbar_bled/
+
+## Pages
+
+- Slovenian: https://bowlbarbled.si/sl/
+- English: https://bowlbarbled.si/en/
+- German: https://bowlbarbled.si/de/
+- Italian: https://bowlbarbled.si/it/
+
+## Key facts
+
+- Name: Bowl Bar Bled
+- Business type: Bowl / poke bar
+- City: Bled, Slovenia
+- Address: Ljubljanska cesta 4, 4260 Bled
+- Inside/near: Trgovski center Bled
+- Opening hours: every day 12:00-20:00
+- Price range: EUR 8.90-14.90
+
+## Menu
+
+- Salmon Bowl — EUR 13.90
+- Tuna Bowl — EUR 14.90
+- Chicken Bowl — EUR 13.90
+- Green Bowl — EUR 11.90
+- Mixed Bowl — EUR 14.90
+- Vegi Bowl — EUR 13.90
+- Kids Bowl — EUR 8.90
+
+For full ingredients, see /llms-full.txt.

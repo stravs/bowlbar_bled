@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bowlbarbled.si/sitemap-index.xml
+
+# AI-readable site summary
+# https://bowlbarbled.si/llms.txt
+# https://bowlbarbled.si/llms-full.txt

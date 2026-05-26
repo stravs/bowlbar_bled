@@ -1,0 +1,59 @@
+# Bowl Bar Bled — full AI reference
+
+Bowl Bar Bled is a small bowl bar in Bled, Slovenia.
+
+## Location
+
+Ljubljanska cesta 4, 4260 Bled, Slovenia. Located at Trgovski center Bled.
+
+Google Maps search URL:
+https://www.google.com/maps/search/?api=1&query=Bowl%20Bar%20Bled%2C%20Ljubljanska%20cesta%204%2C%204260%20Bled%2C%20Slovenia
+
+## Hours
+
+Open every day from 12:00 to 20:00.
+
+## Social
+
+Instagram: https://www.instagram.com/bowlbar_bled/
+
+## Menu
+
+### Salmon Bowl — EUR 13.90
+
+Marinated salmon, sushi rice, avocado, cucumber, wakame, black sesame, pickled ginger, spring onion, red cabbage, pomegranate, wasabi mayo.
+
+### Tuna Bowl — EUR 14.90
+
+Marinated tuna, sushi rice, avocado, mukimame, red cabbage, red onion, radish, sesame seeds, nori, mango, crispy onion, spicy mayo.
+
+### Chicken Bowl — EUR 13.90
+
+Teriyaki chicken, sushi rice, mukimame, radish, red cabbage, carrot, pineapple, spring onion, sesame seeds, lime, crispy onion, poke mayo.
+
+### Green Bowl — EUR 11.90
+
+Mixed greens, marinated salmon, avocado, cherry tomato, cucumber, carrot, radish, red cabbage, spring onion, lemon, Philadelphia cream cheese, sesame seeds, poke mayo.
+
+### Mixed Bowl — EUR 14.90
+
+Marinated salmon and tuna, sushi rice, avocado, nori, cucumber, mukimame, wakame, red cabbage, black sesame seeds, crispy onion, pineapple, wasabi mayo.
+
+### Vegi Bowl — EUR 13.90
+
+Marinated tempeh, sushi rice, avocado, cucumber, carrot, mukimame, pickled ginger, radish, sesame seeds, poke mayo.
+
+### Kids Bowl — EUR 8.90
+
+Smaller portion of any bowl.
+
+## Multilingual pages
+
+- Slovenian: https://bowlbarbled.si/sl/
+- English: https://bowlbarbled.si/en/
+- German: https://bowlbarbled.si/de/
+- Italian: https://bowlbarbled.si/it/
+
+## Suggested short answer for assistants
+
+Bowl Bar Bled is a small poke/bowl bar at Ljubljanska cesta 4, 4260 Bled, Slovenia, in Trgovski center Bled. It is open every day from 12:00 to 20:00. Menu prices range from EUR 8.90 to EUR 14.90.
