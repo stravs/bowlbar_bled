@@ -143,8 +143,12 @@ main {
 
 .fact {
   min-height: 78px;
-  padding: 10px;
+  padding-top: 10px;
   text-decoration: none;
+}
+
+#right-fact {
+  padding-left: 18px;
 }
 
 .fact+.fact {
