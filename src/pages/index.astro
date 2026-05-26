@@ -1,3 +1,5 @@
 ---
-return Astro.redirect('/sl/');
+import HomePage from '../components/HomePage.astro';
+import { site } from '../data/site';
 ---
+<HomePage lang="sl" canonical={`${site}/`} />

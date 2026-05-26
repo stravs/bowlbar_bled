@@ -1,41 +1,11 @@
 ---
-import Header from '../components/Header.astro';
-import HeroInfo from '../components/HeroInfo.astro';
-import MenuList from '../components/MenuList.astro';
-import { i18n, languages, restaurantSchema, site, type Language } from '../data/site';
-import Base from '../layouts/Base.astro';
-import '../styles/global.css';
+import HomePage from '../components/HomePage.astro';
+import { languages, type Language } from '../data/site';
 
 export function getStaticPaths() {
   return languages.map((lang) => ({ params: { lang } }));
 }
 
 const lang = Astro.params.lang as Language;
-const t = i18n[lang];
-const schema = restaurantSchema(lang);
 ---
-<Base title={t.title} description={t.desc} lang={lang} canonical={`${site}/${lang}/`}>
-  <Fragment slot="head">
-    <meta property="og:locale" content={lang === 'sl' ? 'sl_SI' : lang === 'en' ? 'en_US' : lang === 'de' ? 'de_DE' : 'it_IT'} />
-    {languages.map((l) => <link rel="alternate" hreflang={l} href={`${site}/${l}/`} />)}
-    <link rel="alternate" hreflang="x-default" href={`${site}/en/`} />
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-  </Fragment>
-
-  <Header lang={lang} />
-
-  <main>
-    <h1 class="sr-only">{t.h1}</h1>
-    <HeroInfo hours={t.hours} open={t.open} address={t.address} center={t.center} />
-    <MenuList lang={lang} />
-  </main>
-
-  <footer class="shell footer">
-    <a class="instagram-link" href="https://www.instagram.com/bowlbar_bled/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm8.7 2.1a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8ZM12 7.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z" />
-      </svg>
-    </a>
-    <span>{new Date().getFullYear()} Bowl Bar Bled</span>
-  </footer>
-</Base>
+<HomePage lang={lang} />
