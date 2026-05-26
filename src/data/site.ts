@@ -104,6 +104,10 @@ export function restaurantSchema(lang: Language) {
       addressLocality: 'Bled',
       addressCountry: 'SI'
     },
+    url: `${site}/${lang}/`,
+    image: `${site}/og-image.png`,
+    sameAs: ['https://www.instagram.com/bowlbar_bled/'],
+    priceRange: '€8.90-€14.90',
     openingHours: 'Mo-Su 12:00-20:00',
     hasMenu: `${site}/${lang}/#menu`
   };

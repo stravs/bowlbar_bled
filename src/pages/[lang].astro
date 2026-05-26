@@ -16,6 +16,7 @@ const schema = restaurantSchema(lang);
 ---
 <Base title={t.title} description={t.desc} lang={lang} canonical={`${site}/${lang}/`}>
   <Fragment slot="head">
+    <meta property="og:locale" content={lang === 'sl' ? 'sl_SI' : lang === 'en' ? 'en_US' : lang === 'de' ? 'de_DE' : 'it_IT'} />
     {languages.map((l) => <link rel="alternate" hreflang={l} href={`${site}/${l}/`} />)}
     <link rel="alternate" hreflang="x-default" href={`${site}/en/`} />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
