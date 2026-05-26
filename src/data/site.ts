@@ -7,8 +7,8 @@ export const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Bowl%20Ba
 
 export const i18n = {
   sl: {
-    title: 'Bowl Bar Bled — bowls vsak dan 12:00–20:00',
-    desc: 'Bowl Bar v Bledu. Ljubljanska cesta 4, Trgovski center Bled. Odprto vsak dan 12:00–20:00.',
+    title: 'Bowl Bar Bled',
+    desc: 'Bowl Bar na Bledu. Ljubljanska cesta 4, Trgovski center Bled. Odprto vsak dan 12:00–20:00.',
     h1: 'Bowl Bar Bled',
     open: 'Odprto vsak dan',
     hours: '12:00–20:00',
@@ -16,7 +16,7 @@ export const i18n = {
     center: 'Trgovski center Bled'
   },
   en: {
-    title: 'Bowl Bar Bled — bowls daily 12:00–20:00',
+    title: 'Bowl Bar Bled',
     desc: 'Bowl Bar in Bled, Slovenia. Ljubljanska cesta 4, Bled Shopping Center. Open every day 12:00–20:00.',
     h1: 'Bowl Bar Bled',
     open: 'Open every day',
@@ -25,7 +25,7 @@ export const i18n = {
     center: 'Bled Shopping Center'
   },
   de: {
-    title: 'Bowl Bar Bled — Bowls täglich 12:00–20:00',
+    title: 'Bowl Bar Bled',
     desc: 'Bowl Bar in Bled, Slowenien. Ljubljanska cesta 4, Einkaufszentrum Bled. Täglich geöffnet 12:00–20:00.',
     h1: 'Bowl Bar Bled',
     open: 'Täglich geöffnet',
@@ -34,7 +34,7 @@ export const i18n = {
     center: 'Einkaufszentrum Bled'
   },
   it: {
-    title: 'Bowl Bar Bled — bowl ogni giorno 12:00–20:00',
+    title: 'Bowl Bar Bled',
     desc: 'Bowl Bar a Bled, Slovenia. Ljubljanska cesta 4, Centro commerciale Bled. Aperto ogni giorno 12:00–20:00.',
     h1: 'Bowl Bar Bled',
     open: 'Aperto ogni giorno',
