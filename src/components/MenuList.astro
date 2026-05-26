@@ -6,17 +6,42 @@ interface Props {
 }
 
 const menu = bowls[Astro.props.lang];
+const leftBowls = menu.slice(0, 3);
+const rightBowls = menu.slice(3, 6);
+const kidsBowl = menu[6];
 ---
 <section class="section shell" id="menu" aria-label="Menu">
   <div class="bowls">
-    {menu.map((b) => (
-      <article class="bowl">
-        <div class="bowl-head">
-          <h2>{b.name}</h2>
-          <div class="price">{b.price}</div>
-        </div>
-        <p>{b.text}</p>
-      </article>
-    ))}
+    <div class="menu-column menu-column-left">
+      {leftBowls.map((b) => (
+        <article class="bowl">
+          <div class="bowl-head">
+            <h2>{b.name}</h2>
+            <div class="price">{b.price}</div>
+          </div>
+          <p>{b.text}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="menu-column menu-column-right">
+      {rightBowls.map((b) => (
+        <article class="bowl">
+          <div class="bowl-head">
+            <h2>{b.name}</h2>
+            <div class="price">{b.price}</div>
+          </div>
+          <p>{b.text}</p>
+        </article>
+      ))}
+    </div>
+
+    <article class="bowl kids-bowl">
+      <div class="bowl-head">
+        <h2>{kidsBowl.name}</h2>
+        <div class="price">{kidsBowl.price}</div>
+      </div>
+      <p>{kidsBowl.text}</p>
+    </article>
   </div>
 </section>
